@@ -1,28 +1,4 @@
-//pasajeros
-
-object ludmila {
-	 method precioXKm() {return 18}
-}
-
-object anaMaria {
-	var estaEstable = true
-	
-	method noEstaEstable() { estaEstable = false }
-	method siEstaEstable() { estaEstable = true }
-	
-	method precioXKm() {if (estaEstable) {return 30} 
-				else {return 25}
-	}
-}
-
-object teresa {
-	var precioDeKilometro = 22
-	
-	method cambioDeValor(nuevoValor) {precioDeKilometro = nuevoValor}
-	method precioXKm() {return precioDeKilometro}
-}
-
-
+import clientes.*
 //remiseras
 
 object roxana {
@@ -46,7 +22,13 @@ object juana {
 }
 
 
-
+object lucia {
+	var remiseraEstaReemplazando
+	
+	method remiseraActual(remisera) {remiseraEstaReemplazando = remisera}
+	method precioViaje(cliente,kms) {return remiseraEstaReemplazando.precioViaje(cliente,kms)}
+	
+}
 
 /*
  * definir remiseras y clientes.
